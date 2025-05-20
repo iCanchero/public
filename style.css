@@ -1,0 +1,449 @@
+@font-face {
+  font-family: 'Outfit';
+  src: url('assets/fonts/Outfit.ttf') format('truetype-variations');
+  font-weight: 100 900; /* Defines the range of weights available */
+  font-style: normal;
+}
+
+body {
+  font-family: 'Outfit', 'Arial', sans-serif; /* Added Outfit as the primary font */
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #191b35; /* Your dark brand color */
+  color: white;
+  padding: 1em 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative; /* Keep it in the normal document flow */
+  z-index: 100;
+}
+
+/* Styles specific to the landing page (index.html) */
+.landing-page header {
+  /* background-color: #191b35; */ /* Original Darker brand color */
+  background-color: transparent; /* Make header background transparent */
+  color: white;
+  padding: 1em 0;
+  text-align: center;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */ /* Remove shadow as it might look odd on a transparent bg */
+  box-shadow: none;
+  position: absolute; /* Position header over the hero image */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100; /* Ensure header is on top of hero content */
+}
+
+.landing-page header .header-container {
+  /* Changed from .container to .header-container for specificity */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 0; /* Adjust padding as logo and nav will stack */
+}
+
+header img.logo {
+  height: 60px; /* Unified, smaller logo size for all pages */
+  margin-bottom: 0.5em;
+  vertical-align: middle; /* Helps align if text is next to it */
+}
+
+.landing-page header img.logo {
+  height: 200px; /* Larger logo for landing page */
+  margin-bottom: 2em; /* Space between logo and nav */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2em; /* Slightly adjusted */
+  display: inline-block; /* Allows vertical alignment with logo */
+  vertical-align: middle;
+  margin-left: 10px; /* Space between logo and title */
+}
+
+header h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+nav {
+  display: inline-block; /* Allows nav to sit nicely with logo/title */
+  vertical-align: middle;
+  /* margin: 30px 0;  */
+  font-size: 1.5em;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  margin-top: 0; /* Adjusted for better alignment */
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px; /* Slightly reduced margin */
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+body:not(.landing-page) header {
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  flex: 1;
+  max-width: 80%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  padding: 20px;
+  position: relative; /* For hero text positioning */
+  z-index: 2; /* For hero text positioning */
+}
+
+.landing-page .hero {
+  background-image: linear-gradient(
+      rgba(25, 27, 53, 0.6),
+      rgba(25, 27, 53, 0.1)
+    ),
+    url('assets/images/landing-hero.jpg');
+  background-size: cover;
+  background-position: center center;
+  color: white;
+  padding-top: 150px; /* Adjusted for new smaller header height */
+  padding-bottom: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.landing-page .hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(25, 27, 53, 0.5);
+  z-index: 1;
+}
+
+.landing-page .hero h2 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  position: relative;
+  z-index: 2;
+}
+
+.landing-page .hero p {
+  font-size: 1.3em;
+  margin-bottom: 1.5em;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.landing-page .hero .cta-button {
+  background-color: #ffffff;
+  color: #0d47a1;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.landing-page .hero .cta-button:hover {
+  background-color: #e0e0e0;
+  color: #003366;
+}
+
+/* General .hero styles for other pages (if any were to use it) - currently not used by privacy/terms */
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #191b35; /* Example background for a generic hero */
+  color: white;
+}
+
+.features {
+  /* padding: 40px 20px; */
+  background-color: white;
+  text-align: center;
+}
+
+.features h3 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #0d47a1;
+}
+
+.feature-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.feature {
+  flex-basis: calc(33.333% - 40px);
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feature img {
+  max-width: 80px; /* Adjust as needed */
+  margin-bottom: 15px;
+}
+
+.feature h4 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #0d47a1; /* Darker brand color */
+}
+
+.feature p {
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+/* New styles for poster gallery */
+.poster-gallery {
+  background-color: #ffffff; /* White background for the gallery section */
+  text-align: center;
+}
+
+.poster-gallery h3 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #0d47a1; /* Brand color for the heading */
+}
+
+.poster-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center items in the grid */
+}
+
+.poster-item {
+  flex-basis: 50%; /* 2 items per row on desktop, considering 20px gap */
+  /* max-width: 450px;  */
+  /* margin-bottom: 20px; */
+  background-color: #f9f9f9;
+  /* border-radius: 8px; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensures image corners are rounded if image is direct child */
+  transition: transform 0.3s ease; /* For hover effect */
+}
+
+.poster-item:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.poster-item img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the image covers the item area well */
+  display: block; /* Remove extra space below image */
+  /* border-radius: 8px; */
+}
+
+/* Styles for the new merged CTA section */
+.final-cta-section {
+  background-image: linear-gradient(
+      rgba(25, 27, 53, 0.7),
+      rgba(25, 27, 53, 0.7)
+    ),
+    url('assets/images/cta-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  color: white;
+  padding: 200px 20px;
+  text-align: center;
+  position: relative; /* For potential pseudo-elements if needed */
+}
+
+.final-cta-section .container {
+  position: relative; /* Ensure content is above any pseudo-element overlay */
+  z-index: 2;
+}
+
+.final-cta-section h3 {
+  font-size: 2.5em; /* Larger heading */
+  margin-bottom: 0.8em;
+  font-weight: 600;
+}
+
+.final-cta-section p {
+  font-size: 1.2em;
+  margin-bottom: 1.8em;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final-cta-section .cta-button {
+  background-color: #ffffff;
+  color: #0d47a1; /* Brand color for text */
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 10px 5px; /* Spacing for buttons */
+  display: inline-block; /* Ensure margins apply correctly */
+}
+
+.final-cta-section .cta-button:hover {
+  background-color: #e0e0e0;
+  color: #003366; /* Darker blue for hover text */
+}
+
+footer {
+  background-color: #191b35;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  /* margin-top: 30px; */
+}
+
+footer p {
+  margin: 20px 0;
+  font-size: 0.9em;
+}
+
+footer a {
+  color: #00abff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Styles for legal pages content */
+.legal-content-wrapper {
+  padding-top: 40px; /* Add padding to push content below the fixed header */
+  padding-bottom: 40px;
+}
+
+/* Remove the embedded styles from privacy.html and terms.html for .legal-content and manage here */
+.legal-content {
+  background-color: white;
+  padding: 30px;
+  margin-top: 20px; /* This will be relative to legal-content-wrapper */
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.legal-content h2 {
+  color: #333;
+  margin-bottom: 1em;
+  font-weight: 600; /* Example weight for Outfit */
+}
+
+.legal-content h3 {
+  color: #0d47a1; /* Use brand dark blue */
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 500; /* Example weight for Outfit */
+}
+
+.legal-content p,
+.legal-content ul {
+  line-height: 1.6;
+  margin-bottom: 1em;
+  font-weight: 400; /* Example: Regular weight for Outfit */
+}
+
+.legal-content ul {
+  padding-left: 20px;
+}
+
+.legal-content strong {
+  color: #333;
+  font-weight: 600; /* Example: Semibold weight for Outfit */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  .hero h2 {
+    font-size: 2.2em;
+  }
+
+  .hero p {
+    font-size: 1em;
+  }
+
+  .feature-grid {
+    flex-direction: column;
+  }
+
+  .feature {
+    flex-basis: 100%;
+    margin: 10px 0;
+  }
+
+  .poster-item {
+    flex-basis: 100%; /* 1 item per row */
+    /* max-width: 400px;  */
+  }
+
+  .call-to-action h3 {
+    font-size: 1.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  .poster-item {
+    flex-basis: 100%; /* 1 item per row */
+    max-width: 100%; /* Full width within container padding */
+  }
+}
+
+/* Ensure legal page headers also use the dark blue if they share this CSS */
+.legal-content h3 {
+  color: #0d47a1 !important; /* Darker brand color, use important if needed due to inline styles in HTML */
+}
