@@ -5,6 +5,11 @@
   font-style: normal;
 }
 
+html {
+  scroll-behavior: smooth;
+  background-color: #191b35;
+}
+
 body {
   font-family: 'Outfit', 'Arial', sans-serif; /* Added Outfit as the primary font */
   margin: 0;
